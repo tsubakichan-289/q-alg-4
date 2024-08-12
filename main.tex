@@ -1,0 +1,163 @@
+\documentclass[dvipdfm]{beamer}
+
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+\everymath{\displaystyle}
+
+\newcommand{\CC}{\mathbb{C}}
+
+\title{量子群と\\ヤン・バクスター\\方程式}
+\author{つばきちゃん}
+
+\begin{document}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+  \begin{frame}
+    \frametitle{目次}
+    \tableofcontents
+  \end{frame}
+  \subsection{可換性・余可換性}
+  \begin{frame}
+    \frametitle{可換性・余可換性}
+    双代数やホップ代数が可換であるとは単に代数として可換であるということである．
+
+    双代数$(H,m,n,\Delta,\varepsilon)$に対して$(H,m,n,\Delta',\varepsilon)$もまた双代数であることは容易に示される．
+
+    さらに$H$が対合射$S$を持ち，$S$が可逆であるとすると，
+    \begin{align*}
+      \sum a^{(1)}S^{-1}(a^{(2)}) &= \sum S(S^{(-1)}(a^{(1)}))S^{-1}(a^{(2)}) \\
+      &= \varepsilon(a)1_H\\
+      \sum S^{-1}(a^{(1)})a^{(2)} &= \sum S^{-1}(a^{(1)})S(S^{(-1)}(a^{(2)})) \\
+      &= \varepsilon(a)1_H\\
+      \Delta'(a) &= \sum a^{(2)}\otimes a^{(1)}
+    \end{align*}
+    この結果は$(H,m,n,\Delta',\varepsilon)$がホップ代数であることを示している．
+  \end{frame}
+  \begin{frame}
+    \begin{definition}
+      余代数，双代数，ホップ代数が余可換であるとは，$\Delta' = \Delta$が成り立つことをいう．
+    \end{definition}
+    ここで例$1.8$のホップ代数$H$は可換である．
+    
+    $H$の積$m$は$\varphi\in H\otimes H(\in G\times G \to \CC)$に対して
+    \[
+    m(\varphi)(x) = \varphi(x,x)
+    \]
+    と定義される．
+    このとき$\varphi'(a,b)=\varphi(b,a)$を考えると
+    \[
+    m(\varphi')(x) = \varphi'(x,x) = \varphi(x,x) = m(\varphi)(x)
+    \]
+  \end{frame}
+  \begin{frame}
+    また，$f \in H (\in G \to \CC)$に対して$\Delta(f)(x,y) = f(xy)$であり，
+    $\Delta'(f)(x,y) = f(yx)$であるので，$H$が余可換$(\Delta=\Delta')$であるということは，
+    $f(xy) = f(yx)$が成り立つことをいう．
+
+    つまり$H$が余可換であるとは$G$が可換であることをいう．
+
+    包絡環$U(\mathfrak{g})$について$U(\mathfrak{g})$が可換であるとき，
+    $AB=BA$となり，$[A,B]=0$が成り立たなくてはならない．
+    つまり$\mathfrak{g}$は可換となる．
+  \end{frame}
+  \begin{frame}
+    余可換なホップ代数について余代数$C$が単純であるとは，
+    $C$と$0$以外の部分余代数を持たないことをいう．
+
+    ただ$1$つの単純部分余代数を持つとき，$C$を既約であるという．
+    \begin{theorem}
+      既約余可換なホップ代数$H$について，あるリー環$\mathfrak{g}$が存在して$H\simeq U(\mathfrak{g})$となる．
+    \end{theorem}
+  \end{frame}
+  \section{$U_q(\mathfrak{sl}(2,\CC))$}
+  \begin{frame}
+    リー環$\mathfrak{sl}(2,\CC)$に付随する量子包絡環$U_q(\mathfrak{sl}(2,\CC))$を考える．
+    まず$\mathfrak{sl}(2,\CC)$を定義する．
+    \begin{definition}
+      \begin{align*}
+        \mathfrak{sl}(2,\CC) &= \{X \in \text{Mat}(2,\CC) | \text{tr} X = 0\}
+      \end{align*}
+      ベクトル空間として$\mathfrak{sl}(2,\CC)$は基底
+      \[
+      E=\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix},\quad F=\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix},\quad H=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+      \]
+      を持つ．
+    \end{definition}
+    交換関係$[A,B]=AB-BA$について，基底$E,F,H$は，
+    \[
+    [H,E]=2E,\quad [H,F]=-2F,\quad [E,F]=H
+    \]
+    が成り立つ．
+  \end{frame}
+  \begin{frame}
+    量子包絡環$U_q(\mathfrak{sl}(2,\CC))$は$U(\mathfrak{sl}(2,\CC))$の$q$版である．
+    ここで$q$は$0,\pm1$ではない任意の複素数である．
+
+    量子包絡環$U_q(\mathfrak{sl}(2,\CC))$は$X^+,X^-,K,K^{-1}$で，生成される自由結合代数で，
+    次の関係式を満たすものである．
+    \begin{align*}
+      KK^{-1} &= K^{-1}K = 1\\
+      KX^{\pm}K^{-1} &= q^{\pm2}X^{\pm}\\
+      [X^+,X^-] &= \frac{K-K^{-1}}{q-q^{-1}}
+    \end{align*}
+    このことを詳しく述べると，
+    $X^+,X^-,K,K^{-1}$を基底に持つベクトル空間上の自由結合代数$\mathfrak{J}$を
+    イデアル$\mathfrak{I}$で割ったものが$U_q(\mathfrak{sl}(2,\CC))$である．
+    $\mathfrak{I}$は
+    \[
+    KK^{-1}-1,\quad K^{-1}K-1,\quad KX^{\pm}K^{-1}-q^{\pm2}X^{\pm},\quad [X^+,X^-]-\frac{K-K^{-1}}{q-q^{-1}}
+    \]
+    で生成される．
+  \end{frame}
+  \begin{frame}
+    リー環$\mathfrak{sl}(2,\CC)$と比較してみる．
+
+    リー環の不定元$A,B$に対して
+    リー括弧$[A,-]$を$B$に$n$回作用させることを$[A,B]_n$と書く．
+    \begin{align*}
+      [A,B]_0 &= B\\
+      [A,B]_1 &= [A,B] = AB-BA = \sum_{k=0}^{1} \binom{1}{k}A^{1-k}B(-A)^k\\
+      [A,B]_2 &= [A,[A,B]] = A(AB-BA)-(AB-BA)A \\
+      &= \sum_{k=0}^{2} \binom{2}{k}A^{2-k}B(-A)^k\\
+    \end{align*}
+    であり，
+    \[
+    [A,B]_n = \sum_{k=0}^{n} \binom{n}{k}A^{n-k}B(-A)^k
+    \]
+    であることが，帰納的に示される．
+  \end{frame}
+  \begin{frame}
+    これにより，$e^{\varepsilon A}Be^{-\varepsilon A}$は
+    \begin{align*}
+      e^{\varepsilon A}Be^{-\varepsilon A} &= \sum_{k=0}^{\infty}\frac{\varepsilon A}{k!} B \sum_{l=0}^{\infty}\frac{(-\varepsilon A)^l}{l!} \\
+      &= \sum_{k=0}^{\infty}\sum_{l=0}^{\infty}\frac{\varepsilon^k(-\varepsilon)^l}{k!l!}A^kB(-A)^l\\
+      &= \sum_{k=0}^{\infty}\sum_{l=0}^{\infty}\frac{(-1)^l\varepsilon^{k+l}}{k!l!}A^kB(-A)^l
+    \end{align*}
+    ここで，$m=k+l$とする．
+    \begin{align*}
+      &= \sum_{m=0}^{\infty}\sum_{l=0}^{m}\frac{(-1)^l\varepsilon^{m}}{l!(m-l)!}A^{m-l}BA^l \\
+      &= \sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}\sum_{l=0}^{m}\binom{m}{l}A^{m-l}B(-A)^l \\
+      &= \sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}[A,B]_m
+    \end{align*}
+  \end{frame}
+  \begin{frame}
+    ここで$A=H,B=E,q=e^{\varepsilon}$とすると，
+    $e^{\varepsilon A}Be^{-\varepsilon A}=\sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}[A,B]_m$は
+    \begin{align*}
+      q^H E q^{-H} &= \sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}[H,E]_m\\
+      &= \sum_{m=0}^{\infty}\frac{(2\varepsilon)^{m}}{m!}E\\
+      &= e^{2\varepsilon}E\\
+      &= {e^{\varepsilon}}^2 E\\
+      &= q^2 E
+    \end{align*}
+    この関係により，$K = q^H,X^+=E,X^-=F$とおき，$\mathfrak{sl}(2,\CC)$の交換関係を書き直したものであるといことがわかる．
+
+    本質的に$U_q(\mathfrak{sl}(2,\CC))$と$\mathfrak{sl}(2,\CC)$はが異なる点は，
+    リー括弧$[A,B]$の関係式のみである．
+    しかし，$q\to1$の極限で$[X^+,X^-]=\frac{K-K^{-1}}{q-q^{-1}}$は$[E,F]=H$に還元される．
+  \end{frame}
+\end{document}

@@ -1,0 +1,2 @@
+\beamer@subsectionintoc {0}{1}{可換性・余可換性}{3}{0}{0}
+\beamer@sectionintoc {1}{$U_q(\mathfrak {sl}(2,\mathbb {C}))$}{7}{0}{1}
