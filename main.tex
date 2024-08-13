@@ -1,4 +1,4 @@
-\documentclass[dvipdfm]{beamer}
+\documentclass[10pt,dvipdfm]{beamer}
 
 \usepackage{color}
 \usepackage{amsmath}
@@ -116,19 +116,41 @@
   \begin{frame}
     リー環$\mathfrak{sl}(2,\CC)$と比較してみる．
 
-    リー環の不定元$A,B$に対して
-    リー括弧$[A,-]$を$B$に$n$回作用させることを$[A,B]_n$と書く．
-    \begin{align*}
-      [A,B]_0 &= B\\
-      [A,B]_1 &= [A,B] = AB-BA = \sum_{k=0}^{1} \binom{1}{k}A^{1-k}B(-A)^k\\
-      [A,B]_2 &= [A,[A,B]] = A(AB-BA)-(AB-BA)A \\
-      &= \sum_{k=0}^{2} \binom{2}{k}A^{2-k}B(-A)^k\\
-    \end{align*}
-    であり，
-    \[
-    [A,B]_n = \sum_{k=0}^{n} \binom{n}{k}A^{n-k}B(-A)^k
-    \]
-    であることが，帰納的に示される．
+    その準備として次の定理を示す．
+    \begin{theorem}
+      リー環の不定元$A,B$に対して
+      リー括弧$[A,-]$を$B$に$n$回作用させることを$[A,B]_n$と書く．
+      このとき，$[A,B]_n=\sum_{k=0}^{n}\binom{n}{k}A^{n-k}B(-A)^k$である．
+    \end{theorem}
+
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      $n=0$のとき，
+      \[
+      \sum_{k=0}^{0}\binom{0}{k}A^{0-k}B(-A)^k = B = [A,B]_0
+      \]
+      となる．
+      $n>0$のとき，
+      \[
+      [A,B]_n = \sum_{k=0}^{n}\binom{n}{k}A^{n-k}B(-A)^k
+      \]
+      が成り立つとすると，
+      \let\qedsymbol\relax
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      \begin{align*}
+        &[A,[A,B]_n]\\ 
+        &= [A,\sum_{k=0}^{n}\binom{n}{k}A^{n-k}B(-A)^k]\\
+        &= \sum_{k=0}^{n}\binom{n}{k}A^{n-(k - 1)}B(-A)^k + \sum_{k=0}^{n}\binom{n}{k}A^{n-k}B(-A)^{k+1}\\
+        &= \sum_{k=0}^{n}\binom{n}{k}A^{n-(k - 1)}B(-A)^k + \sum_{k=1}^{n+1}\binom{n}{k-1}A^{n-(k-1)}B(-A)^{k}\\
+        &= \binom{n}{0} A^{n+1}B + \sum_{k=1}^{n}\left(\binom{n}{k}+\binom{n}{k-1}\right)A^{n-(k+1)}B(-A)^k + \binom{n}{n}B(-A)^{n+1}\\
+        &= \binom{n+1}{0} A^{n+1}B + \sum_{k=1}^{n}\binom{n+1}{k}A^{n+1-k}B(-A)^k + \binom{n+1}{n+1}B(-A)^{n+1}\\
+        &= \sum_{k=0}^{n+1}\binom{n+1}{k}A^{n+1-k}B(-A)^k = [A,B]_{n+1}
+      \end{align*}
+    \end{proof}
   \end{frame}
   \begin{frame}
     これにより，$e^{\varepsilon A}Be^{-\varepsilon A}$は
