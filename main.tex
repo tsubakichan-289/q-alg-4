@@ -3,7 +3,10 @@
 \usepackage{color}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathrsfs}
 \usepackage{tikz}
+
+\newtheorem{proposition}{Proposition}
 
 \everymath{\displaystyle}
 
@@ -105,9 +108,9 @@
       [X^+,X^-] &= \frac{K-K^{-1}}{q-q^{-1}}
     \end{align*}
     このことを詳しく述べると，
-    $X^+,X^-,K,K^{-1}$を基底に持つベクトル空間上の自由結合代数$\mathfrak{J}$を
-    イデアル$\mathfrak{I}$で割ったものが$U_q(\mathfrak{sl}(2,\CC))$である．
-    $\mathfrak{I}$は
+    $X^+,X^-,K,K^{-1}$を基底に持つベクトル空間上の自由結合代数$\mathscr{J}$を
+    イデアル$\mathscr{I}$で割ったものが$U_q(\mathfrak{sl}(2,\CC))$である．
+    $\mathscr{I}$は
     \[
     KK^{-1}-1,\quad K^{-1}K-1,\quad KX^{\pm}K^{-1}-q^{\pm2}X^{\pm},\quad [X^+,X^-]-\frac{K-K^{-1}}{q-q^{-1}}
     \]
@@ -181,5 +184,71 @@
     本質的に$U_q(\mathfrak{sl}(2,\CC))$と$\mathfrak{sl}(2,\CC)$はが異なる点は，
     リー括弧$[A,B]$の関係式のみである．
     しかし，$q\to1$の極限で$[X^+,X^-]=\frac{K-K^{-1}}{q-q^{-1}}$は$[E,F]=H$に還元される．
+  \end{frame}
+  \subsection{ホップ代数の構造}
+  \begin{frame}
+    以下$U_q = U_q(\mathfrak{sl}(2,\CC))$とする．
+
+    $U_q$についてホップ代数の構造を考える．
+    まず$U_q$の生成元$X^+,X^-,K,K^{-1}$に対して，次の関係式を定義する．
+    \begin{align*}
+      \Delta(K^{\pm1}) &= K^{\pm1}\otimes K^{\pm1}\\
+      \Delta(X^+) &= X^+\otimes 1 + K\otimes X^+\\
+      \Delta(X^-) &= X^-\otimes K^{-1} + 1\otimes X^-\\
+      \varepsilon(K^{\pm1}) &= 1\\
+      \varepsilon(X^{\pm}) &= 0\\
+      S(K^{\pm1}) &= K^{\mp1}\\
+      S(X^+) &= -K^{-1}X^+\\
+      S(X^-) &= -X^-K
+    \end{align*}
+    $U_q$全体には$\Delta,\varepsilon$を代数射として，
+    $S$を反代数射として拡張する．
+  \end{frame}
+  \begin{frame}
+    \begin{proposition}
+      $\Delta,\varepsilon$ は$U_q$上の代数射としてWell-definedである．
+    \end{proposition}
+    \begin{proof}
+      $\mathscr{J}$において$\Delta,\varepsilon$を代数射として拡張することができる．
+      また、本質的に見るべき関係式は$[X^+,X^-]=\frac{K-K^{-1}}{q-q^{-1}}$である．
+  
+      この関係式において$\Delta,\varepsilon$が$[X^+,X^-]-\frac{K-K^{-1}}{q-q^{-1}}$を$0$化することを示す．
+      \begin{align*}
+        &\Delta\left([X^+,X^-] - \frac{K-K^{-1}}{q-q^{-1}}\right) \\
+        &= \Delta\left(X^+X^- - X^-X^+ - \frac{K-K^{-1}}{q-q^{-1}}\right)\\
+        &= \Delta(X^+)\Delta(X^-) - \Delta(X^-)\Delta(X^+) - \frac{\Delta(K)-\Delta(K^{-1})}{q-q^{-1}}\\
+        &= [\Delta(X^+),\Delta(X^-)] - \frac{\Delta(K) - \Delta(K^{-1})}{q-q^{-1}}
+      \end{align*}
+      \let\qedsymbol\relax
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      ここで，$[\Delta(X^+),\Delta(X^-)]$について考える．
+      \begin{align*}
+        &[\Delta(X^+),\Delta(X^-)] \\
+        =& [X^+\otimes 1 + K\otimes X^+,X^-\otimes K^{-1} + 1\otimes X^-]\\
+        =&(X^+\otimes 1 + K\otimes X^+)(X^-\otimes K^{-1} + 1\otimes X^-)\\
+        &-(X^-\otimes K^{-1} + 1\otimes X^-)(X^+\otimes 1 + K\otimes X^+)\\
+        =&X^+X^-\otimes K^{-1} + X^+\otimes X^- + KX^-\otimes X^+K^{-1} + K\otimes X^+X^-\\
+        &-(X^-X^+\otimes K^{-1} + KX^- \otimes X^+K^{-1} + X^+\otimes X^- + K\otimes X^-X^+)\\
+        =&(X^+X^- - X^-X^+)\otimes K^{-1} + K \otimes (X^+X^- - X^-X^+)\\
+        &+ KX^-\otimes X^+K^{-1} - X^-K\otimes K^{-1}X^+\\
+        =&[X^+,X^-]\otimes K^{-1} + K\otimes [X^+,X^-]\\
+        &+ (q^{-2}X^-K)\otimes(q^2K^{-1}X^+) - X^-K\otimes K^{-1}X^+\\
+        =&\frac{K-K^{-1}}{q-q^{-1}}\otimes K^{-1} + K\otimes \frac{K-K^{-1}}{q-q^{-1}}\\
+        &= \frac{K\otimes K^{-1} - K^{-1}\otimes K^{-1}+K\otimes K -K\otimes K^{-1}}{q-q^{-1}}=\frac{\Delta(K) - \Delta(K^{-1})}{q-q^{-1}}
+      \end{align*}
+      \let\qedsymbol\relax
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      これにより，
+      \[
+      \Delta\left([X^+,X^-] - \frac{K-K^{-1}}{q-q^{-1}}\right)=0
+      \]
+      が示された．
+    \end{proof}
   \end{frame}
 \end{document}
