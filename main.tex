@@ -170,6 +170,26 @@
     \end{align*}
   \end{frame}
   \begin{frame}
+    $\sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}[A,B]_m$の絶対収束性について
+    \[
+    N_n:=|[A,B]|
+    \]
+    として考えると
+    \begin{align*}
+      |[A,B]_n|&=|A[A,B]_{n-1}-[A,B]_{n-1}A|\\
+      &\leq |A||[A,B]_{n-1}|+|[A,B]_{n-1}||A|\\
+      &= 2|A|N_{n-1}\\
+      &\leq 2^n|A|^n|B|
+    \end{align*}
+    であるので，
+    \[
+    \sum_{m=0}^{\infty}\left|\frac{\varepsilon^{m}}{m!}[A,B]_m\right| \leq \sum_{m=0}^{\infty}\frac{|\varepsilon|^m}{m!}2^m|A|^m|B|^m = e^{2|\varepsilon||A||B|}
+    \]
+    となり，絶対収束する．
+
+    つまり先の順序交換が成立する．
+  \end{frame}
+  \begin{frame}
     ここで$A=H,B=E,q=e^{\varepsilon}$とすると，
     $e^{\varepsilon A}Be^{-\varepsilon A}=\sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}[A,B]_m$は
     \begin{align*}

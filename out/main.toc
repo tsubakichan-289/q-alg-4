@@ -1,2 +1,3 @@
 \beamer@subsectionintoc {0}{1}{可換性・余可換性}{3}{0}{0}
 \beamer@sectionintoc {1}{$U_q(\mathfrak {sl}(2,\mathbb {C}))$}{7}{0}{1}
+\beamer@subsectionintoc {1}{1}{ホップ代数の構造}{15}{0}{1}

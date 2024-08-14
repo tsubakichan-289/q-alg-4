@@ -271,6 +271,8 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/beamer/beamericononline.20.pdf
 INPUT c:/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -354,6 +356,12 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT c:/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 INPUT c:/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 INPUT c:/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd

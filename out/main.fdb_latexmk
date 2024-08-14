@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1723522056.23241 "out/main.dvi" "out/main.pdf" "out/main" 1723522057.56748 0
-  "out/main.dvi" 1723522055 108076 a40977c5885f14ffb924f0f64ee846fd "latex"
+["dvipdf"] 1723600163.98307 "out/main.dvi" "out/main.pdf" "out/main" 1723600165.4201 0
+  "out/main.dvi" 1723600163 151752 ef8c4e933e6de904fe8c5ffa33f16ea6 "latex"
   (generated)
   "out/main.pdf"
   (rewritten before read)
-["latex"] 1723522053.84656 "c:/Users/tsuba/work/tex/q-alg-4/main.tex" "out/main.dvi" "main" 1723522057.55596 0
-  "c:/Users/tsuba/work/tex/q-alg-4/main.tex" 1723522052 7704 9ed4db7b19fcc6e544a531b87735d98d ""
+["latex"] 1723600161.1172 "c:/Users/tsuba/work/tex/q-alg-4/main.tex" "out/main.dvi" "main" 1723600165.40528 0
+  "c:/Users/tsuba/work/tex/q-alg-4/main.tex" 1723600160 11417 d2867f5314f3b1fe4385961fc0ded8cf ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1709195476 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1709513596 1196 1be730212205a270378fba11a44765dc ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1709513596 856 39c171483fe1bb7d0e1368980c0c205b ""
@@ -23,6 +23,9 @@
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1709190527 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1709190527 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm" 1709190527 1520 ca2bb4b78ac9800bd686e30c6d19ef95 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1709513901 688 37338d6ab346c2f1466b29e195316aa4 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1709513901 684 3a51bd4fd9600428d5264cf25f04bb9a ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1709513901 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm" 1709513944 1696 aaa5bbd1f47f001247d42218ce371101 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm" 1709513944 1676 fb6c6a335484692abff897d6e8965829 ""
   "c:/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1709187922 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -162,6 +165,8 @@
   "c:/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty" 1709256112 11026 182c63f139a71afd30a28e5f1ed2cd1c ""
   "c:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def" 1709256112 14249 e67cb186717b7ab18d14a4875e7e98b5 ""
   "c:/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def" 1709256112 117112 05831178ece2cad4d9629dcf65099b11 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/jknapltx/mathrsfs.sty" 1709426567 300 12fa6f636b617656f2810ee82cb05015 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd" 1709426567 548 cc4e3557704bfed27c7002773fad6c90 ""
   "c:/texlive/2023/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty" 1709510392 11185 15c86b5a61db19da88ab941ca5b70a12 ""
   "c:/texlive/2023/texmf-dist/tex/latex/koma-script/scrlfile.sty" 1709510392 3328 3d5fc41a419bf18130ce17d90a23c295 ""
   "c:/texlive/2023/texmf-dist/tex/latex/koma-script/scrlogo.sty" 1709510392 2162 418e29bcf2b8059e8a9ee1ea4d0d0c87 ""
@@ -196,11 +201,11 @@
   "c:/texlive/2023/texmf-dist/web2c/texmf.cnf" 1709186699 41009 84b61f42d16d06bedb915f57aa2374cf ""
   "c:/texlive/2023/texmf-var/web2c/euptex/platex.fmt" 1709518181 8156978 9cd03690e5823ffb5249b246771ecf3f ""
   "c:/texlive/2023/texmf.cnf" 1709517975 713 614551405fc44b98efbf516466e3c909 ""
-  "main.tex" 1723522052 7704 9ed4db7b19fcc6e544a531b87735d98d ""
-  "out/main.aux" 1723522055 3233 2ea74ddb65d5383c0204fb348867f875 "latex"
-  "out/main.nav" 1723522055 1808 7bc832233627f3e62bc1c111e9442c59 "latex"
-  "out/main.out" 1723522055 213 1840bde5cbf0ac9566fbe60f5f53b6fc "latex"
-  "out/main.toc" 1723522055 138 39b23d030a643fdf54c461e938494d41 "latex"
+  "main.tex" 1723600160 11417 d2867f5314f3b1fe4385961fc0ded8cf ""
+  "out/main.aux" 1723600163 4427 a3225e54690b727f7fc4179461572e9b "latex"
+  "out/main.nav" 1723600163 2491 77394578b043f6672bf1d9768bb80516 "latex"
+  "out/main.out" 1723600163 327 3e83bb5d0e9bb799cd6bdd0c09f4cf1d "latex"
+  "out/main.toc" 1723600163 205 ee5196f87554bf4807965846f62aa570 "latex"
   (generated)
   "out/main.aux"
   "out/main.dvi"
