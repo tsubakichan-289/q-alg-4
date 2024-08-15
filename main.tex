@@ -7,6 +7,8 @@
 \usepackage{tikz}
 
 \newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
 
 \everymath{\displaystyle}
 
@@ -164,27 +166,19 @@
     \end{align*}
     ここで，$m=k+l$とする．
     \begin{align*}
-      &= \sum_{m=0}^{\infty}\sum_{l=0}^{m}\frac{(-1)^l\varepsilon^{m}}{l!(m-l)!}A^{m-l}BA^l \\
+      &= \sum_{m=0}^{\infty}\sum_{l=0}^{m}\frac{(-1)^l\varepsilon^{m}}{l!(m-l)!}A^{m-l}B(-A)^l \\
       &= \sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}\sum_{l=0}^{m}\binom{m}{l}A^{m-l}B(-A)^l \\
       &= \sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}[A,B]_m
     \end{align*}
   \end{frame}
   \begin{frame}
-    $\sum_{m=0}^{\infty}\frac{\varepsilon^{m}}{m!}[A,B]_m$の絶対収束性について
-    \[
-    N_n:=|[A,B]|
-    \]
-    として考えると
+    $\sum_{k=0}^{\infty}\sum_{l=0}^{\infty}\frac{(-1)^l\varepsilon^{k+l}}{k!l!}A^kB(-A)^l$の絶対収束性について
     \begin{align*}
-      |[A,B]_n|&=|A[A,B]_{n-1}-[A,B]_{n-1}A|\\
-      &\leq |A||[A,B]_{n-1}|+|[A,B]_{n-1}||A|\\
-      &= 2|A|N_{n-1}\\
-      &\leq 2^n|A|^n|B|
+      \sum_{k=0}^{\infty}\sum_{l=0}^{\infty}\left|\frac{(-1)^l\varepsilon^{k+l}}{k!l!}A^kB(-A)^l\right| &= \sum_{k=0}^{\infty}\sum_{l=0}^{\infty}\frac{|\varepsilon|^{k+l}}{k!l!}|A|^k|B||A|^l\\
+      &= |B| \sum_{k=0}^{\infty}\frac{|\varepsilon|^k}{k!}|A|^k \sum_{l=0}^{\infty}\frac{|\varepsilon|^l}{l!}|A|^l\\
+      &= |B|e^{|\varepsilon||A|}e^{|\varepsilon||A|} = |B|e^{2|\varepsilon||A|}
     \end{align*}
-    であるので，
-    \[
-    \sum_{m=0}^{\infty}\left|\frac{\varepsilon^{m}}{m!}[A,B]_m\right| \leq \sum_{m=0}^{\infty}\frac{|\varepsilon|^m}{m!}2^m|A|^m|B|^m = e^{2|\varepsilon||A||B|}
-    \]
+
     となり，絶対収束する．
 
     つまり先の順序交換が成立する．
@@ -230,9 +224,47 @@
     \end{proposition}
     \begin{proof}
       $\mathscr{J}$において$\Delta,\varepsilon$を代数射として拡張することができる．
-      また、本質的に見るべき関係式は$[X^+,X^-]=\frac{K-K^{-1}}{q-q^{-1}}$である．
-  
-      この関係式において$\Delta,\varepsilon$が$[X^+,X^-]-\frac{K-K^{-1}}{q-q^{-1}}$を$0$化することを示す．
+
+      $a,b\in\mathscr{J}$に対して$a\sim B\leftrightarrow a-b\in\mathscr{I}$であり，
+      $a\sim b$ならば$\Delta(a)\sim\Delta(b),\varepsilon(a)=\varepsilon(b)$が成り立つことを確認する．
+      
+      $a\sim b$に対して
+      \[
+      \Delta(a)-\Delta(b) = \Delta(a-b)
+      \]
+      $a-b\in \mathscr{I}$であるので$x \in \mathscr{I}$として$\Delta(x)=0$を示す．
+      \begin{align*}
+        x =& a(KK^{-1}-1)+b(K^{-1}K-1)+c(KX^+K^{-1}-q^+X^+)\\
+        &+d(KX^-K^{-1}-q^-X^-)+e\left([X^+,X^-]-\frac{K-K^{-1}}{q-q^{-1}}\right)\\
+        \Delta(x) =& a\Delta(KK^{-1}-1)+b\Delta(K^{-1}K-1)+c\Delta(KX^+K^{-1}-q^+X^+)\\
+        &+d\Delta(KX^-K^{-1}-q^-X^-)+e\Delta\left([X^+,X^-]-\frac{K-K^{-1}}{q-q^{-1}}\right)
+      \end{align*}
+      \let\qedsymbol\relax
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      \begin{align*}
+        \Delta(KK^{-1}-1) &= \Delta(K)\Delta(K^{-1}) - \Delta(1)\\
+        &= (K\otimes K)(K^{-1}\otimes K^{-1}) - 1\otimes 1\\
+        &= KK^{-1}\otimes KK^{-1} - 1\otimes 1\\
+        &= 1\otimes 1 - 1\otimes 1 = 0
+      \end{align*}
+      となり，同様に$\Delta(K^{-1}K-1)=0$
+      \begin{align*}
+        \Delta&(KX^+K^{-1}-q^2X^+)\\ 
+        &= \Delta(K)\Delta(X^+)\Delta(K^{-1}) - q^2\Delta(X^+)\\
+        &= (K\otimes K)(X^+\otimes 1 + K\otimes X^+)(K^{-1}\otimes K^{-1}) - q^2(X^+\otimes 1 + K\otimes X^+)\\
+        &= KX^+K^{-1}\otimes 1 + K\otimes KX^+K^{-1} - q^2(X^+\otimes 1 + K\otimes X^+)\\
+        &= q^2X^+\otimes 1 + K\otimes q^2X^+ - q^2(X^+\otimes 1 + K\otimes X^+)\\
+        &= q^2(X^+\otimes 1 + K\otimes X^+) - q^2(X^+\otimes 1 + K\otimes X^+) = 0
+      \end{align*}
+      となり，同様に$\Delta(KX^-K^{-1}-q^{-2}X^-)=0$となる．
+      \let\qedsymbol\relax
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
       \begin{align*}
         &\Delta\left([X^+,X^-] - \frac{K-K^{-1}}{q-q^{-1}}\right) \\
         &= \Delta\left(X^+X^- - X^-X^+ - \frac{K-K^{-1}}{q-q^{-1}}\right)\\
@@ -268,7 +300,106 @@
       \[
       \Delta\left([X^+,X^-] - \frac{K-K^{-1}}{q-q^{-1}}\right)=0
       \]
-      が示された．
+      となり，$\Delta$はWell-definedである．
+      
+      また，$\varepsilon$について
+      \begin{align*}
+        \varepsilon(x) =& a\varepsilon(KK^{-1}-1)+b\varepsilon(K^{-1}K-1)+c\varepsilon(KX^+K^{-1}-q^+X^+)\\
+        &+d\varepsilon(KX^-K^{-1}-q^-X^-)+e\varepsilon\left([X^+,X^-]-\frac{K-K^{-1}}{q-q^{-1}}\right)
+      \end{align*}
+      であるので，$\varepsilon(x)=0$となることを示す．
+      \[
+        \varepsilon(KK^{-1}-1) = \varepsilon(K)\varepsilon(K^{-1}) - 1\cdot 1 = 1 - 1 = 0
+      \]
+      となり，同様に$\varepsilon(K^{-1}K-1)=0$となる．
+      \[
+        \varepsilon(KX^+K^{-1}-q^2X^+) = \varepsilon(K)\varepsilon(X^+)\varepsilon(K^{-1}) - q^2\varepsilon(X^+) = 1 \cdot 0 \cdot 1 - q^2 \cdot 0 = 0
+      \]
+      となり，同様に$\varepsilon(KX^-K^{-1}-q^{-2}X^-)=0$となる．
+      \let\qedsymbol\relax
     \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      \begin{align*}
+        \varepsilon&\left([X^+,X^-] - \frac{K-K^{-1}}{q-q^{-1}}\right)\\
+        &= \varepsilon\left(X^+X^- - X^-X^+ - \frac{K-K^{-1}}{q-q^{-1}}\right)\\
+        &= \varepsilon(X^+)\varepsilon(X^-) - \varepsilon(X^-)\varepsilon(X^+) - \frac{\varepsilon(K)-\varepsilon(K^{-1})}{q-q^{-1}}\\
+        &= 0 - 0 - \frac{1-1}{q-q^{-1}} = 0
+      \end{align*}
+      となり，$\varepsilon$はWell-definedである．
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{theorem}
+      $(U_q,\Delta,\varepsilon,S)$は双代数である．
+    \end{theorem}
+    \begin{proof}
+      $\Delta$は余結合法則を満たす．
+      \begin{align*}
+        (\Delta\otimes\text{id})\Delta(K^{\pm1}) &= \Delta(K^{\pm1})\otimes K^{\pm1}\\
+        &= K^{\pm1}\otimes K^{\pm1}\otimes K^{\pm1}\\
+        &= (\text{id}\otimes\Delta)\Delta(K^{\pm1})
+      \end{align*}
+      \let\qedsymbol\relax
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      \begin{align*}
+        (\Delta\otimes\text{id})\Delta(X^+) &= \Delta(X^+)\otimes 1 + \Delta(K)\otimes X^+\\
+        &= X^+\otimes 1\otimes 1 + K\otimes X^+\otimes 1 + K\otimes K\otimes X^+\\
+        &= X^+\otimes 1\otimes 1 + K\otimes (X^+\otimes 1 + K\otimes X^+)\\
+        &= X^+\otimes \Delta(1) + K\otimes \Delta(X^+)\\
+        &= (\text{id}\otimes\Delta)(X^+\otimes 1 + K\otimes X^+)\\
+        &= (\text{id}\otimes\Delta)\Delta(X^+)
+      \end{align*}
+      となり，同様に$\Delta(X^-)$についても成り立つ．
+      \let\qedsymbol\relax
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{proof}
+      $\varepsilon$は余単位律が成り立つ．
+      \begin{align*}
+        (\varepsilon\otimes\text{id})\Delta(K^{\pm1}) &= (\varepsilon\otimes\text{id})(K^{\pm1}\otimes K^{\pm1})\\
+        &= \varepsilon(K^{\pm1})\otimes K^{\pm1}= 1\otimes K^{\pm1}= K^{\pm1}\\
+        (\text{id}\otimes\varepsilon)\Delta(K^{\pm1}) &= (\text{id}\otimes\varepsilon)(K^{\pm1}\otimes K^{\pm1})\\
+        &= K^{\pm1}\otimes \varepsilon(K^{\pm1})= K^{\pm1}\otimes 1= K^{\pm1}
+      \end{align*}
+      $\varepsilon(X^+)$についても
+      \begin{align*}
+        (\varepsilon\otimes\text{id})\Delta(X^+) &= (\varepsilon\otimes\text{id})(X^+\otimes 1 + K\otimes X^+)\\
+        &= \varepsilon(X^+)\otimes 1 + \varepsilon(K)\otimes X^+= 0\otimes 1 + 1\otimes X^+= X^+\\
+        (\text{id}\otimes\varepsilon)\Delta(X^+) &= (\text{id}\otimes\varepsilon)(X^+\otimes 1 + K\otimes X^+)\\
+        &= X^+\otimes \varepsilon(1) + K\otimes \varepsilon(X^+)= X^+\otimes 1 + K\otimes 0= X^+
+      \end{align*}
+      となり，同様に$\varepsilon(X^-)$についても成り立つ．
+    \end{proof}
+  \end{frame}
+  \begin{frame}
+    \begin{remark}
+      一般に余代数$(C,\Delta,\varepsilon)$に対して，
+      \begin{center}
+        \begin{tikzpicture}
+          \node (C) at (0,0) {$C$};
+          \node (CC) at (2,0) {$C\otimes C$};
+          \node (CCC) at (4,0) {$C\otimes C \otimes C$};
+          \node (B) at (6,0) {};
+          \node (NC) at (9,0) {$C\otimes C\otimes\cdots\otimes C = C^{\otimes n}$};
+          \draw[->] (C) to node[above]{$\Delta$} (CC);
+          \draw[->] (CC) to node[above]{$\Delta\otimes\text{id}$} (CCC);
+          \draw[->] (CCC) to node[above]{$\Delta\otimes\text{id}\otimes\text{id}$} (B);
+          \draw[dotted,->] (B) to node[above]{} (NC);
+        \end{tikzpicture}
+      \end{center}
+      を合成した写像を$\Delta^{(n-1)}:C\to C^{\otimes n}$と書く．
+      $\Delta^{(0)}=id,\Delta^{(1)}=\Delta$である．
+    \end{remark}
+    $U_q$に対しては次の公式が成り立つ．
+    \begin{align*}
+      \Delta^{(n-1)}(X^+) &= \sum_{j=0}^{n-1}K^{\otimes j}\otimes X^+\otimes 1^{\otimes n-j-1}\\
+      \Delta^{(n-1)}(X^-) &= \sum_{j=0}^{n-1}1^{\otimes j}\otimes X^-\otimes {K^{-1}}^{\otimes n-j-1}
+    \end{align*}
   \end{frame}
 \end{document}
