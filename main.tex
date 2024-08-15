@@ -402,4 +402,38 @@
       \Delta^{(n-1)}(X^-) &= \sum_{j=0}^{n-1}1^{\otimes j}\otimes X^-\otimes {K^{-1}}^{\otimes n-j-1}
     \end{align*}
   \end{frame}
+  \begin{frame}
+    \[
+    \Delta^{(1)}(X^+) = X^+\otimes 1 + K\otimes X^+ = \sum_{j=0}^{1}K^{\otimes j}\otimes X^+\otimes 1^{\otimes 1-j}
+    \]
+    となり，$n=1$のとき成り立つ．
+    \begin{align*}
+      (\Delta\otimes\text{id}^{\otimes n-1})&\Delta^{(n-1)}(X^+)\\
+      &= (\Delta\otimes\text{id}^{\otimes n-1})\left(\sum_{j=0}^{n-1}K^{\otimes j}\otimes X^+\otimes 1^{\otimes n-j-1}\right)\\
+      &= (\Delta\otimes\text{id}^{\otimes n-1})\left(X^+\otimes 1^{\otimes n-1} + \sum_{j=1}^{n-1}K^{\otimes j}\otimes X^+\otimes 1^{\otimes n-j-1}\right)\\
+      &= (\Delta(X^+)\otimes 1^{\otimes n-1}) + \sum_{j=1}^{n-1}\Delta(K)\otimes K^{\otimes j-1}\otimes X^+\otimes 1^{\otimes n-j-1}\\
+      &= (X^+\otimes 1 + K\otimes X^+)\otimes1^{\otimes n-1} + \sum_{j=1}^{n-1}K^{\otimes j+1}\otimes X^+\otimes 1^{\otimes n-j-1}\\
+      &= X^+\otimes 1^{\otimes n} + K\otimes X^+\otimes 1^{\otimes n-1} + \sum_{j=1}^{n-1}K^{\otimes j+1}\otimes X^+\otimes 1^{\otimes n-j-1}
+    \end{align*}
+  \end{frame}
+  \begin{frame}
+    よって帰納的に$n$について成り立つ．
+    \begin{align*}
+      (\Delta\otimes\text{id}^{\otimes n-1})&\Delta^{(n-1)}(X^+)\\
+      &= \sum_{j=0}^{n}K^{\otimes j}\otimes X^+\otimes 1^{\otimes n-j}
+    \end{align*}
+    $U_q$の対合射$S$を発見的に定義する．
+
+    対合射の定義式に，$U_q$の生成元を代入して考える．
+    \begin{align*}
+      m(S\otimes\text{id})\Delta(K) &= S(K)K & u \varepsilon(K)=1\\
+      m(S\otimes\text{id})\Delta(X^+) &= S(X^+)1 + S(K)X^+ & u \varepsilon(X^+)=0\\
+      m(S\otimes\text{id})\Delta(X^-) &= S(X^-)K^{-1} + S(1)X^- & u \varepsilon(X^-)=0
+    \end{align*}
+    これにより，
+    \[
+    S(K)=K^{-1},\quad S(X^+)=-K^{-1}X^+,\quad S(X^-)=-X^-K
+    \]
+    でなくてはならない．
+  \end{frame}
 \end{document}
